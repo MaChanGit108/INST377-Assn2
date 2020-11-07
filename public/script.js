@@ -2,7 +2,7 @@ function findMatches(wordToMatch, restaurants){
     console.log(restaurants)
     return restaurants.filter(place => {
         const regex = new RegExp(wordToMatch, 'gi');
-        return place.restaurants.match(regex);
+        return place.category.match(regex) || place.name.match(regex)
     });
 }
 
@@ -11,11 +11,12 @@ function displayMatches(restaurants){
     const html = matchArray.map(place => {
         return `
           <li>
-            <span class="name">${place.name}</span>
+            <span class="name">${place.name}</span><br />
             <span class="category">${place.category}</span><br />
             <address class="address">
-                ${place.address_line_1}
-                ${place.city}
+                ${place.address_line_1}<br />
+                ${place.city}<br />
+                ${place.zip}
             </address>
           </li>
         `;
@@ -32,7 +33,7 @@ async function loaddata() {
     const data = await fetch(endpoint);
     const resj = await data.json();
     displayMatches(resj)
-    searchInput.addEventListener('keydown', displayMatches);
+    searchInput.addEventListener('keyup', displayMatches);
 }
 
 window.onload = loaddata;
