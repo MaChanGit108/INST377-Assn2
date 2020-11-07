@@ -10,17 +10,6 @@ function displayMatches(restaurants){
     const matchArray = findMatches(this.value, restaurants);
     const html = matchArray.map(place => {
         return `
-<<<<<<< Updated upstream
-        <li>
-        <span class="name">${place.name}</span>
-        <span class="category">${place.category}</span><br />
-        <address class="address">
-            ${place.address_line_1}
-            ${place.city}
-        </address>
-        </li>
-    `;
-=======
           <li>
             <span class="name">${place.name}</span><br />
             <span class="category">${place.category}</span><br />
@@ -31,7 +20,6 @@ function displayMatches(restaurants){
             </address>
           </li>
         `;
->>>>>>> Stashed changes
     }).join('');
     const suggestions = document.querySelector('.suggestions');
     suggestions.innerHTML = html;
