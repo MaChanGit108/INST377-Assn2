@@ -40,4 +40,6 @@ const userinputs = document.querySelector(".userinput");
 const suggestions = document.querySelector(".suggestions");
 
 // userinputs.addEventListener("change", displayMatches);
-userinputs.addEventListener("keypress", displayMatches);
+// userinputs.addEventListener("keypress", displayMatches);
+userinputs.addEventListener("keydown", displayMatches);
+userinputs.addEventListener("keyup", displayMatches);

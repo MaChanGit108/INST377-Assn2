@@ -5,11 +5,11 @@ body {
   bottom: 10%;
   padding: 0;
   font-family: serif;
-  background: #5cc6db;
+  background: #FCE89C;
 }
 
 .left, .right {
-  background: #5cc6db;
+  background: #FCE89C;
   flex: 1;
   flex-grow: 1;
   flex-shrink: 1;
@@ -17,13 +17,14 @@ body {
 }
 
 .middle {
-  background: #5cc6db;
+  background: #FCE89C;
   /* width: 960px; */
 }
 
 h1 {
+    position: relative;
     max-width: 480px;
-    color: #fff;
+    color: rgba(0,0,255,0.5);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -34,6 +35,14 @@ h1 {
     padding: 4px 8px;
     border-radius: 4px;
     text-align: center;
+}
+
+h1::after {
+  content: "Assignment 2 for Matthew Chan and Frazer Workneh";
+  position: absolute;
+  left: 7px;
+  top: 1px;
+  color: rgba(255,0,0,0.5);
 }
 
 .container {
@@ -66,7 +75,7 @@ h1 {
 
 .resultcontainer li {
   width: 480px;
-  border-bottom: 10px solid rgb(144, 186, 222);
+  border-bottom: 10px solid #FCE89C;
   margin: 0px;
   justify-content: center;
   align-items: center;
@@ -79,6 +88,11 @@ h1 {
   list-style-position: outside;
   padding: 0;
   list-style-type: none;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/78779/star.svg");
+  background-position: 0 1.06em;
+  background-size: 10px 9px;
+  color: #f2f3f8;
+  text-decoration: underline;
 }
 
 .suggestions li .name {
